@@ -1,4 +1,5 @@
 # email-smart-relay
+
 Relay all incoming email to an external provider.
 
 ## Motivation
@@ -17,4 +18,7 @@ properly deliver to my inbox.
 
 As credentials are used (if set), it can mail to anywhere, not just to me of course.
 
---Michael
+The container listens on port 2500, in hopes that someday I won't need to run priviledged
+containers.  I run this in my home Kubernetes cluster.  A sample statefulset is provided
+which also provides durable queue storage to handle container restarts without losing
+pending outgoing email.
